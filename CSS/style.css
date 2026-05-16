@@ -1,0 +1,430 @@
+/* style.css */
+
+:root {
+  --black: #222222;
+  --yellow: #ffd61a;
+  --gray-bg: #fafafa;
+}
+
+html {
+  scroll-behavior: smooth;
+  color: var(--black);
+}
+
+/* ========== HEADER ========== */
+header {
+  background: #fff;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 50px; /* ナビ上部50px */
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+}
+
+nav .nav-list {
+  display: flex;
+  gap: 50px; /* ABOUT〜間の余白50px */
+}
+
+nav .nav-list a {
+  font-size: 21px;
+  color: var(--black);
+  transition: color 0.2s;
+}
+
+nav .nav-list a:hover {
+  color: var(--yellow);
+}
+
+/* ========== MAIN VISUAL ========== */
+.mainvisual {
+  width: 100%;
+  height: 540px; /* 完成画像から目測、調整可 */
+  background-image: url(../img/top_01.png);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center; /* ①②を等しくする＝垂直中央 */
+  justify-content: center;
+}
+
+.mainvisual-text {
+  text-align: center;
+  color: #fff;
+}
+
+.mainvisual-text {
+  text-align: center;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5); /* 黒・透明度50% */
+  padding: 40px 60px; /* 内側の余白・お好みで調整 */
+}
+
+.mv-title {
+  font-size: 38px; /* 完成画像を見て調整 */
+  margin-bottom: 30px;
+}
+
+.mv-sub {
+  font-size: 24px; /* 完成画像を見て調整 */
+}
+
+/* ========== 共通タイトル ========== */
+.section-title-en {
+  font-size: 24px;
+  color: #ffd61a;
+  display: inline-block;
+  border-bottom: 2px solid #ffd61a;
+  padding-bottom: 8px;
+  margin-bottom: 30px;
+}
+
+/* ========== ABOUT ========== */
+#about {
+  padding-top: 60px;
+  background: #fff;
+  text-align: center;   /* ← about-textではなくここに移す */
+}
+
+.about-body p {
+  margin-bottom: 40px;
+}
+
+.about-body p:last-child {
+  margin-bottom: 80px; /* 写真との間隔 */
+}
+
+.about-body {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+
+.about-images {
+  display: flex;
+  width: 100%;
+}
+
+.about-images img {
+  width: 25%;
+  height: 300px;
+  object-fit: cover;
+  display: block;       /* ← 追加 */
+}
+
+/* ========== COURSE ========== */
+#course {
+  padding-top: 30px;
+  background: #fff;
+  text-align: center;
+}
+
+
+.course-lead {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+/* コースブロック共通 */
+.course-block {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  justify-content: center; /* ← 追加 */
+  padding-left: 0;         /* ← 60px → 0 */
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* オーバーレイ */
+.course-img {
+  position: relative;
+  width: 300px;  /* ← 固定値を追加 */
+  flex-shrink: 0;
+}
+
+.course-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  box-sizing: border-box;
+}
+
+.course-img:hover .course-overlay {
+  opacity: 1;
+}
+
+.course-overlay h4 {
+  font-size: 16px;
+  color: #ffd61a;
+  margin-bottom: 16px;
+}
+
+.course-overlay p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+.course-text {
+  width: 45%; /* 50%→45%に縮小 */
+  padding: 60px 0;
+  text-align: left;
+}
+
+.course-img img {
+  width: 300px;  /* ← 固定値 */
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+
+.course-title-ja {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.course-text p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* ========== NEWS ========== */
+#news {
+  background: #fafafa;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+
+.news-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.news-item {
+  width: 300px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.news-item:hover {
+  opacity: 0.7;
+}
+
+.news-item img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.news-date {
+  font-size: 16px;
+  margin-top: 16px;
+  margin-bottom: 10px;
+  color: #222222;
+}
+
+.news-text {
+  font-size: 16px;
+  line-height: 1.7;
+  text-align: left;
+  color: #222222;
+}
+
+/* ========== ACCESS ========== */
+#access {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background: #fff;
+  text-align: center;
+}
+
+
+#access .section-title-ja {
+  font-size: 18px;
+  margin-bottom: 50px;
+}
+
+.access-map {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.access-info {
+  display: inline-block;
+  text-align: left;
+}
+
+.access-row {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.access-row dt {
+  width: 80px;
+  font-weight: bold;
+  color: #222222;
+}
+
+.access-row dd {
+  color: #222222;
+}
+
+/* ========== CONTACT ========== */
+#contact {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background: #fafafa;
+  text-align: center;
+}
+
+#contact .section-title-ja {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.contact-lead {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 50px;
+}
+
+/* フォーム全体 */
+.contact-form {
+  display: inline-block;
+  text-align: left;
+  width: 640px;
+}
+
+/* 各行 */
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.form-row-check {
+  align-items: flex-start;
+}
+
+/* ラベル部分：240px */
+.form-label {
+  width: 240px;
+  font-size: 16px;
+  flex-shrink: 0;
+  line-height: 1.6;
+}
+
+/* インプット部分：幅328px・高さ36px */
+.form-input {
+  width: 328px;
+  height: 36px;
+  border: 1px solid #bfbfbf;
+  font-size: 16px;
+  padding: 0 8px;
+}
+
+/* セレクトボックス */
+.form-select {
+  width: 328px;
+  height: 36px;
+  border: 1px solid #bfbfbf;
+  font-size: 16px;
+  padding: 0 8px;
+}
+
+/* チェックボックス */
+.form-checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.form-checkboxes label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+/* テキストエリア */
+.form-textarea {
+  width: 328px;
+  height: 120px;
+  border: 1px solid #bfbfbf;
+  font-size: 16px;
+  padding: 8px;
+  resize: vertical;
+}
+
+
+
+/* 送信ボタン */
+.contact-btn {
+  display: block;
+  width: 300px;
+  height: 60px;
+  margin: 40px auto 0;
+  background: #ffd61a;
+  color: #222222;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.contact-btn:hover {
+  background: #222222;
+  color: #fff;
+}
+
+footer {
+  background: #707070;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-copy {
+  color: #fff; /* ← 白に修正 */
+  font-size: 16px;
+}
